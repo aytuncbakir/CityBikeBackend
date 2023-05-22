@@ -1,0 +1,39 @@
+spring:
+  jpa:
+    properties:
+     jakarta:
+      persistence:
+        validation:
+          mode: none
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:postgresql://localhost:5432/helsinkibike
+    username: postgres
+    password: root
+    driverClassName: org.postgresql.Driver
+  data:
+    web:
+      pageable:
+        default-page-size: 6
+        max-page-size: 100     
+  servlet:
+    multipart:
+      max-file-size: 10MB
+        
+citybike:
+  upload-path: picture-storage
+  rate: 86400000 
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
