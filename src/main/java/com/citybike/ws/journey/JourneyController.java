@@ -5,6 +5,8 @@ import java.text.DecimalFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,7 +48,7 @@ public class JourneyController {
 	}
 		
 	@GetMapping("/api/1.0/journeys")
-	Page<Journey> getJourneys(Pageable page){
+	Page<Journey> getJourneys(@PageableDefault(sort="id", direction=Direction.DESC) Pageable page){
 		
 		return journeyService.getJourneys(page);
 	}
